@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/nodejs/main.js',
   output: {
-    path: path.resolve(__dirname, 'dist/js'),
+    path: path.resolve(__dirname, 'dist/nodejs/'),
     filename: 'bundle.js'
   },
   module: {
@@ -17,9 +18,10 @@ module.exports = {
          }
        }
      ]
-  }
+  },
+  plugins: [ 
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: ['dist/nodejs/']
+    })
+  ]
 };
-new webpack.ProvidePlugin({
-  $: 'jquery',
-    jQuery: 'jquery'
-});
