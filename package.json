@@ -4,7 +4,7 @@
   "description": "minimal setup for karma unit test in ES6 with babel, webpack",
   "main": "dist/js/bundle.js",
   "dependencies": {
-    "moment": "^2.24.0"
+    "moment": "^2.29.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
